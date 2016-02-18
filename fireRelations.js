@@ -78,6 +78,15 @@ function FireRelations(){
 	this.addTable = function(name,table){
 		this.schema[name] = table;
 	}
+
+	this.describeSchema = function(){
+		var keys = Object.keys(this.schema)
+		var tables = new Array();
+		for(var i = 0;i < keys.length; i++){
+			tables.push(this.schema[keys[i]])
+		}
+		return tables;
+	}
 }
 
 
