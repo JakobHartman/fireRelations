@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+	<script src="fireRelations.js"></script>
+	<script>
+		$(document).ready(function(){
+			var f = new FireRelations();
+			var userCols = ["name","email"];
+			var fir = f.init("https://relationaltest.firebaseio.com");
+			f.addTable("Users",new fireTable("Users",userCols));
+			f.insert().into("Users").values("Jakob Hartman,JakobHartman@hotmail.com");
+			f.select("name").from("Users").where("name").equals("Jakob Hartman").then(function(callback){
+				console.log(callback);
+			});
+		})
+	</script>
+</head>
+<body>
+
+</body>
+</html>
