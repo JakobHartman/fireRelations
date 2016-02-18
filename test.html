@@ -7,11 +7,17 @@
 	<script src="fireRelations.js"></script>
 	<script>
 		$(document).ready(function(){
+			// create fireRelation object
 			var f = new FireRelations();
+			// Columns wanted for table
 			var userCols = ["name","email"];
+			// intialize firebase object with url
 			var fir = f.init("https://relationaltest.firebaseio.com");
+			// add table to schema
 			f.addTable("Users",new fireTable("Users",userCols));
+			//insert statement 
 			f.insert().into("Users").values("Jakob Hartman,JakobHartman@hotmail.com");
+			//select statement 
 			f.select("name").from("Users").where("name").equals("Jakob Hartman").then(function(callback){
 				console.log(callback);
 			});
