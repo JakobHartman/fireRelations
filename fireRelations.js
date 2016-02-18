@@ -38,7 +38,6 @@ function FireRelations(){
 		return t.orderByChild(this.key).equalTo(value).once("value").then(function(data){
 			var d = data.val();
 			var rows = Object.keys(d);
-			console.log(rows);
 			if(c == "*"){
 				return d;
 			}else{
@@ -86,7 +85,6 @@ function fireTable(name,columns){
 	this.name = name;
 	this.columns = columns;
 	this.checkColumns = function(values){
-		console.log(values.length == this.columns.length)
 		return values.length == this.columns.length;
 	}
 }
