@@ -16,11 +16,10 @@
 			// add table to schema
 			f.addTable("Users",new fireTable("Users",userCols));
 			//insert statement 
-			f.insert().into("Users").values("Jakob Hartman,JakobHartman@hotmail.com");
-			//select statement 
-			f.select("name").from("Users").where("name").equals("Jakob Hartman").then(function(callback){
-				console.log(callback);
-			});
+			f.insert().into("Users").values("Jakob Hartman,JakobHartman@fireRelations.com");
+			f.insert().into("Users").values("Peter Hartman,PeterHartman@fireRelations.com");
+			//delete statement 
+			f.delete().from("Users").where("name").equals("Jakob Hartman");
 		})
 	</script>
 </head>
@@ -28,3 +27,14 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

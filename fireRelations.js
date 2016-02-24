@@ -6,7 +6,8 @@ function FireRelations(){
 	var column;
 	var table;
 	var key;
-	var into;
+	var intoTable;
+	var deleteFlag = false;
 
 	this.schema = {};
 
@@ -19,6 +20,11 @@ function FireRelations(){
 	this.select = function(column){
 		this.column = column;
 		return this;
+	}
+
+	this.delete = function(){
+		this.deleteFlag = true;
+		return this
 	}
 
 	this.from = function(table){
@@ -35,24 +41,35 @@ function FireRelations(){
 		var t = this.firebaseUrl.child(this.table);
 		console.log(this.table)
 		var c = this.column;
-		return t.orderByChild(this.key).equalTo(value).once("value").then(function(data){
-			var d = data.val();
-			var rows = Object.keys(d);
-			if(c == "*"){
-				return d;
-			}else{
-				var rowObjects = new Array();
-				var columnsNeeded = c.split(",");
-				for(var i = 0;i < rows.length;i++){
-					var returnObject = {};
-					for(var o = 0; o < columnsNeeded.length;o++){
-						returnObject[columnsNeeded] = d[rows[i]][columnsNeeded]
+		if(this.deleteFlag){
+			t.orderByChild(this.key).equalTo(value).once("value").then(function(data){
+				data.forEach(function(child){
+					t.child(child.ref().key()).remove();
+				})
+				this.deleteFlag = false;
+			})
+			return this
+		}else{
+			return t.orderByChild(this.key).equalTo(value).once("value").then(function(data){
+				var d = data.val();
+				var rows = Object.keys(d);
+				if(c == "*"){
+					return d;
+				}else{
+					var rowObjects = new Array();
+					var columnsNeeded = c.split(",");
+					for(var i = 0;i < rows.length;i++){
+						var returnObject = {};
+						for(var o = 0; o < columnsNeeded.length;o++){
+							returnObject[columnsNeeded] = d[rows[i]][columnsNeeded]
+						}
+						rowObjects.push(returnObject)
 					}
-					rowObjects.push(returnObject)
+					return rowObjects;
 				}
-				return rowObjects;
-			}
-		})
+			})
+		}
+		
 	}
 
 	this.insert = function(){
@@ -60,19 +77,20 @@ function FireRelations(){
 	}
 
 	this.into = function(into){
-		this.into = into
+		this.intoTable = into
 		return this 
 	}
-
+ 
 	this.values = function(values){
-		var selectedTable = this.schema[this.into];
+		var selectedTable = this.schema[this.intoTable];
 		values = values.split(",");
 		if(selectedTable.checkColumns(values)){
-			var newRow = this.firebaseUrl.child(this.into).push();
+			var newRow = this.firebaseUrl.child(this.intoTable).push();
 			for(var i = 0;i < values.length;i++){
 				newRow.child(selectedTable.columns[i]).set(values[i]);
 			}
 		}
+		return this
 	}
 
 	this.addTable = function(name,table){
@@ -97,14 +115,3 @@ function fireTable(name,columns){
 		return values.length == this.columns.length;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
