@@ -12,6 +12,7 @@ A small library providing a utility to interact with firebase like a sql databas
   var fireRelation = require('fireRelations');
   <br>
   fireRelation.init("Firebase URL");
+  <br>
   //add a table definition
   <br>
   var userCols = ["Column1","Column2"];
@@ -44,3 +45,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 ## Release History
 
 * 1.0.0 Initial release
+* 1.0.1 Fixed bugs
