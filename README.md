@@ -10,12 +10,14 @@ A small library providing a utility to interact with firebase like a sql databas
 ## Usage
 
   var fireRelation = require('fireRelations');
+  <br>
   fireRelation.init("Firebase URL");
 
   //insert
   fireRelation.insert().into("Table").values("Data1,Data2");
 
   //Select, will return a promise with data 
+
   var data = fireRelation.select().from("Table").where("Column").equals("Value");
   data.then(function(callback){
   	console.log(callback);
