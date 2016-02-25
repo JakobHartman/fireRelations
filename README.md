@@ -12,7 +12,12 @@ A small library providing a utility to interact with firebase like a sql databas
   var fireRelation = require('fireRelations');
   <br>
   fireRelation.init("Firebase URL");
-
+  //add a table definition
+  <br>
+  var userCols = ["Column1","Column2"];
+  <br>
+  fireRelation.addTable("Table Name",userCols);
+  <br>
   //insert
   <br>
   fireRelation.insert().into("Table").values("Data1,Data2");
