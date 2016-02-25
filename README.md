@@ -14,16 +14,21 @@ A small library providing a utility to interact with firebase like a sql databas
   fireRelation.init("Firebase URL");
 
   //insert
+  <br>
   fireRelation.insert().into("Table").values("Data1,Data2");
-
+  <br>
   //Select, will return a promise with data 
-
+  <br>
   var data = fireRelation.select().from("Table").where("Column").equals("Value");
+  <br>
   data.then(function(callback){
+  <br>
   	console.log(callback);
+  <br>
   })
-
+  <br>
   //Delete
+  <br>
   fireRelation.delete().from("Table").where("Column").equals("Value");
 
 ## Contributing
