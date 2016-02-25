@@ -23,24 +23,24 @@
 8 silly lockFile 3c6d4d42-m-JakobHartman-fireRelations-git https://github.com/JakobHartman/fireRelations.git
 9 verbose lock https://github.com/JakobHartman/fireRelations.git /Users/jakobhartman/.npm/3c6d4d42-m-JakobHartman-fireRelations-git.lock
 10 verbose addRemoteTarball [ 'https://github.com/JakobHartman/fireRelations.git', null ]
-11 info retry fetch attempt 1 at 23:27:23
-12 verbose fetch to= /var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git
+11 info retry fetch attempt 1 at 23:31:40
+12 verbose fetch to= /var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git
 13 http GET https://github.com/JakobHartman/fireRelations.git
 14 http 200 https://github.com/JakobHartman/fireRelations.git
-15 verbose tar unpack /var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git
-16 silly lockFile 37436d99-Hartman-fireRelations-git-unpack tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git-unpack
-17 verbose lock tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git-unpack /Users/jakobhartman/.npm/37436d99-Hartman-fireRelations-git-unpack.lock
-18 silly lockFile 5a08a368-m-JakobHartman-fireRelations-git tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git
-19 verbose lock tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git /Users/jakobhartman/.npm/5a08a368-m-JakobHartman-fireRelations-git.lock
+15 verbose tar unpack /var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git
+16 silly lockFile 092e1243-Hartman-fireRelations-git-unpack tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git-unpack
+17 verbose lock tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git-unpack /Users/jakobhartman/.npm/092e1243-Hartman-fireRelations-git-unpack.lock
+18 silly lockFile f4ede380-m-JakobHartman-fireRelations-git tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git
+19 verbose lock tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git /Users/jakobhartman/.npm/f4ede380-m-JakobHartman-fireRelations-git.lock
 20 silly gunzTarPerm modes [ '755', '644' ]
-21 error not a package /var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git
-22 silly lockFile 37436d99-Hartman-fireRelations-git-unpack tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git-unpack
-23 silly lockFile 37436d99-Hartman-fireRelations-git-unpack tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git-unpack
-24 silly lockFile 5a08a368-m-JakobHartman-fireRelations-git tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git
-25 silly lockFile 5a08a368-m-JakobHartman-fireRelations-git tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git
+21 error not a package /var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git
+22 silly lockFile 092e1243-Hartman-fireRelations-git-unpack tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git-unpack
+23 silly lockFile 092e1243-Hartman-fireRelations-git-unpack tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git-unpack
+24 silly lockFile f4ede380-m-JakobHartman-fireRelations-git tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git
+25 silly lockFile f4ede380-m-JakobHartman-fireRelations-git tar:///var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git
 26 silly lockFile 3c6d4d42-m-JakobHartman-fireRelations-git https://github.com/JakobHartman/fireRelations.git
 27 silly lockFile 3c6d4d42-m-JakobHartman-fireRelations-git https://github.com/JakobHartman/fireRelations.git
-28 error Error: ENOENT, open '/var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git-unpack/package.json'
+28 error Error: ENOENT, open '/var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git-unpack/package.json'
 29 error If you need help, you may report this *entire* log,
 29 error including the npm and node versions, at:
 29 error     <http://github.com/npm/npm/issues>
@@ -49,7 +49,7 @@
 32 error cwd /Users/jakobhartman/Desktop/FireRelations
 33 error node -v v0.10.33
 34 error npm -v 1.4.28
-35 error path /var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22584-g61qH9Va/github.com/JakobHartman/fireRelations.git-unpack/package.json
+35 error path /var/folders/jx/36j54wq16gd0z20j2snxh1780000gn/T/npm-22629-EEuTZ33v/github.com/JakobHartman/fireRelations.git-unpack/package.json
 36 error code ENOENT
 37 error errno 34
 38 verbose exit [ 34, true ]
