@@ -46,3 +46,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 * 1.0.0 Initial release
 * 1.0.1 Fixed bugs
+* 1.0.2 Readme Updates

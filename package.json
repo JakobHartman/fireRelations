@@ -1,6 +1,6 @@
 {
   "name": "firerelations",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "sql like library for interacting with firebase",
   "main": "fireRelations.js",
   "scripts": {
