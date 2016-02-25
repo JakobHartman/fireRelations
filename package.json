@@ -22,5 +22,9 @@
   "homepage": "https://github.com/JakobHartman/fireRelations#readme",
   "dependencies": {
     "firebase": "^2.4.1"
+  },
+  "engines" : { 
+    "npm" : "~1.4.28",
+    "node": ">=0.10.33"
   }
 }
