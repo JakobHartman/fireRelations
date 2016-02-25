@@ -1,14 +1,8 @@
-/**
- * Escape special characters in the given string of html.
- *
- * @param  {String} html
- * @return {String}
- */
 
 var Firebase = require("firebase");
-module.exports = {
-	return new FireRelations();
-};
+
+module.exports = new FireRelations();
+
 
 function FireRelations(){
 	var url;
@@ -93,6 +87,8 @@ function FireRelations(){
  
 	this.values = function(values){
 		var selectedTable = this.schema[this.intoTable];
+		console.log(this.schema)
+		console.log(selectedTable)
 		values = values.split(",");
 		if(selectedTable.checkColumns(values)){
 			var newRow = this.firebaseUrl.child(this.intoTable).push();
@@ -104,7 +100,8 @@ function FireRelations(){
 	}
 
 	this.addTable = function(name,table){
-		this.schema[name] = table;
+		var newTable = new fireTable(name,table)
+		this.schema[name] = newTable;
 	}
 
 	this.describeSchema = function(){
@@ -115,13 +112,16 @@ function FireRelations(){
 		}
 		return tables;
 	}
+
+	
+}
+
+function fireTable(name,ecolumns){
+		this.name = name;
+		this.columns = ecolumns;
+		this.checkColumns = function(values){
+			return values.length == this.columns.length;
+		}
 }
 
 
-function fireTable(name,columns){
-	this.name = name;
-	this.columns = columns;
-	this.checkColumns = function(values){
-		return values.length == this.columns.length;
-	}
-}
