@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/JakobHartman/fireRelations/issues"
   },
-  "homepage": "https://github.com/JakobHartman/fireRelations#readme"
+  "homepage": "https://github.com/JakobHartman/fireRelations#readme",
+  "dependencies": {
+    "firebase": "^2.4.1"
+  }
 }
