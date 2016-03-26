@@ -9,33 +9,26 @@ A small library providing a utility to interact with firebase like a sql databas
 
 ## Usage
 
-  var fireRelation = require('fireRelations');
-  <br>
-  fireRelation.init("Firebase URL");
-  <br>
-  //add a table definition
-  <br>
-  var userCols = ["Column1","Column2"];
-  <br>
-  fireRelation.addTable("Table Name",userCols);
-  <br>
-  //insert
-  <br>
-  fireRelation.insert().into("Table").values("Data1,Data2");
-  <br>
-  //Select, will return a promise with data 
-  <br>
-  var data = fireRelation.select().from("Table").where("Column").equals("Value");
-  <br>
-  data.then(function(callback){
-  <br>
-  	console.log(callback);
-  <br>
-  })
-  <br>
-  //Delete
-  <br>
-  fireRelation.delete().from("Table").where("Column").equals("Value");
+```javascript
+var fireRelation = require('fireRelations');
+fireRelation.init("Firebase URL");
+
+//add a table definition
+var userCols = ["Column1","Column2"];
+fireRelation.addTable("Table Name",userCols);
+
+//insert
+fireRelation.insert().into("Table").values("Data1,Data2");
+
+//Select, will return a promise with data 
+var data = fireRelation.select().from("Table").where("Column").equals("Value");
+data.then(function(callback){
+  console.log(callback);
+})
+
+//Delete
+fireRelation.delete().from("Table").where("Column").equals("Value");
+```
 
 ## Contributing
 
