@@ -42,15 +42,14 @@ function FireRelations(){
 
 	this.equals = function(value){
 		var t = this.firebaseUrl.child(this.table);
-		console.log(this.table)
 		var c = this.column;
 		if(this.deleteFlag){
 			t.orderByChild(this.key).equalTo(value).once("value").then(function(data){
 				data.forEach(function(child){
 					t.child(child.ref().key()).remove();
 				})
-				this.deleteFlag = false;
 			})
+			this.deleteFlag = false;
 			return this
 		}else{
 			return t.orderByChild(this.key).equalTo(value).once("value").then(function(data){
@@ -86,9 +85,8 @@ function FireRelations(){
  
 	this.values = function(values){
 		var selectedTable = this.schema[this.intoTable];
-		console.log(this.schema)
-		console.log(selectedTable)
 		values = values.split(",");
+		console.log(selectedTable)
 		if(selectedTable.checkColumns(values)){
 			var newRow = this.firebaseUrl.child(this.intoTable).push();
 			for(var i = 0;i < values.length;i++){
@@ -99,8 +97,8 @@ function FireRelations(){
 	}
 
 	this.addTable = function(name,table){
-		var newTable = new fireTable(name,table)
-		this.schema[name] = newTable;
+		
+		this.schema[name] = table;
 	}
 
 	this.describeSchema = function(){
@@ -110,6 +108,53 @@ function FireRelations(){
 			tables.push(this.schema[keys[i]])
 		}
 		return tables;
+	}
+
+	this.like = function(values){
+		var t = this.firebaseUrl.child(this.table);
+		var c = this.column;
+		var k = this.key
+		return t.orderByChild(this.key).once("value").then(function(data){
+				var d = data.val();
+				var rows = Object.keys(d);
+				if(c == "*"){
+					var selectedRows = new Array();
+					if(rows.length == 0){
+						return "No rows selected"
+					}
+					for (var i = 0; i < rows.length; i++) {
+						 if (d[rows[i]][k].indexOf(values) != -1){
+						 	selectedRows.push(d[rows[i]])
+						 }
+					}
+					return selectedRows
+				}else{
+					var selectedRows = new Array();
+					if(rows.length == 0){
+						return "No rows selected"
+					}
+					for (var i = 0; i < rows.length; i++) {
+						 if (d[rows[i]][k].indexOf(values) != -1){
+						 	selectedRows.push(rows[i])
+						 }
+					}
+					return createObjects(d,selectedRows,c)
+				}
+			})
+	}
+
+	function createObjects(d,rows,c){
+		var rowObjects = new Array();
+		var columnsNeeded = c.split(",");
+		console.log(rows)
+		for(var i = 0;i < rows.length;i++){
+			var returnObject = {};
+			for(var o = 0; o < columnsNeeded.length;o++){
+				returnObject[columnsNeeded] = d[rows[i]][columnsNeeded]
+			}
+			rowObjects.push(returnObject)
+		}
+		return rowObjects;
 	}
 
 	
