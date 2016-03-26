@@ -5,7 +5,9 @@ A small library providing a utility to interact with firebase like a sql databas
 
 ## Installation
 
-  npm install firerelations --save
+```bash
+npm install firerelations --save
+```
 
 ## Usage
 
