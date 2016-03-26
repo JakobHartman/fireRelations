@@ -28,6 +28,12 @@ data.then(function(callback){
   console.log(callback);
 })
 
+//Select, with like clause will return a promise with data 
+var data = fireRelation.select().from("Table").where("Column").like("Value");
+data.then(function(callback){
+  console.log(callback);
+})
+
 //Delete
 fireRelation.delete().from("Table").where("Column").equals("Value");
 ```
@@ -43,3 +49,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * 1.0.1 Fixed bugs
 * 1.0.2 Readme Updates
 * 1.0.3 init doesnt return firebase object, readme coloring
+* 1.0.4 added like clause to selects
