@@ -12,7 +12,7 @@
 			// Columns wanted for table
 			var userCols = ["name","email"];
 			// intialize firebase object with url
-			var fir = f.init("https://relationaltest.firebaseio.com");
+			f.init("https://relationaltest.firebaseio.com");
 			// add table to schema
 			f.addTable("Users",new fireTable("Users",userCols));
 			//insert statement 

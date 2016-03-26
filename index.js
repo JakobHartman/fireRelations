@@ -18,7 +18,6 @@ function FireRelations(){
 
 	this.init = function(url){
 		this.firebaseUrl = new Firebase(url);
-		return this.firebaseUrl;
 	}
 
 	this.select = function(column){
