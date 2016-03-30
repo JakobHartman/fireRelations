@@ -17,7 +17,8 @@ fireRelation.init("Firebase URL");
 
 //add a table definition
 var userCols = ["Column1","Column2"];
-fireRelation.addTable("Table Name",userCols);
+var newTable = new FireTable("tableName",userCols);
+fireRelation.addTable(newTable);
 
 //insert
 fireRelation.insert().into("Table").values("Data1,Data2");
@@ -50,3 +51,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * 1.0.2 Readme Updates
 * 1.0.3 init doesnt return firebase object, readme coloring
 * 1.0.4 added like clause to selects
+* 1.0.5 readme changes, changes to add table 

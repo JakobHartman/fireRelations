@@ -14,7 +14,7 @@
 			// intialize firebase object with url
 			f.init("https://relationaltest.firebaseio.com");
 			// add table to schema
-			f.addTable("Users",new fireTable("Users",userCols));
+			f.addTable(new fireTable("Users",userCols));
 			//insert statement 
 			f.insert().into("Users").values("Jakob Hartman,JakobHartman@fireRelations.com");
 			f.insert().into("Users").values("Peter Hartman,PeterHartman@fireRelations.com");

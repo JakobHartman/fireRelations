@@ -1,6 +1,6 @@
 {
   "name": "firerelations",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "sql like library for interacting with firebase",
   "main": "fireRelations.js",
   "scripts": {
@@ -22,9 +22,5 @@
   "homepage": "https://github.com/JakobHartman/fireRelations#readme",
   "dependencies": {
     "firebase": "^2.4.1"
-  },
-  "engines" : { 
-    "npm" : "~1.4.28",
-    "node": ">=0.10.33"
   }
 }
